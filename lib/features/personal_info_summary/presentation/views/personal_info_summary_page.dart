@@ -1,6 +1,6 @@
 import 'package:blog/app/constants/app_text_styles.dart';
 import 'package:blog/core/widgets/simple_text.dart';
-import 'package:blog/features/personal_info_summary/presentation/widgets/a.dart';
+import 'package:blog/features/personal_info_summary/presentation/widgets/profile_section.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfoSummaryPage extends StatelessWidget {

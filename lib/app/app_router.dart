@@ -6,7 +6,7 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const HomePage(),
+      builder: (context, state) => const HomePageWithBlocProviders(),
     ),
     GoRoute(
       path: '/personal_info_summary',

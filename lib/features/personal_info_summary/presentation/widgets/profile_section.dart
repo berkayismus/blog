@@ -1,4 +1,5 @@
 import 'package:blog/app/constants/app_text_styles.dart';
+import 'package:blog/core/widgets/responsive_layout.dart';
 import 'package:blog/core/widgets/simple_text.dart';
 import 'package:flutter/material.dart';
 
@@ -7,11 +8,10 @@ class ProfileSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ekran boyutunu alarak mobil ve web için düzeni ayarla
-    final isMobile = MediaQuery.of(context).size.width < 768;
-
-    return Center(
-      child: isMobile ? _buildMobileLayout() : _buildWebLayout(),
+    return ResponsiveLayout(
+      mobile: _buildMobileLayout(),
+      tablet: _buildWebLayout(),
+      desktop: _buildWebLayout(),
     );
   }
 
@@ -66,7 +66,7 @@ class ProfileSection extends StatelessWidget {
           isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         SimpleText(
-          text: 'Merhaba, Ben',
+          text: 'Hello 👋',
           style: AppTextStyles.bodyMediumLight,
           textAlign: isMobile ? TextAlign.center : TextAlign.start,
         ),
@@ -78,17 +78,17 @@ class ProfileSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         SimpleText(
-          text: 'Mobil Uygulama Geliştirici',
+          text: 'Mobile Application Developer',
           style: AppTextStyles.headlineSmallLight,
           textAlign: isMobile ? TextAlign.center : TextAlign.start,
         ),
         const SizedBox(height: 24),
         SimpleText(
           text:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...',
+              'I am a dedicated Flutter Developer with over four years of experience delivering scalable and high-performance mobile applications. At Defacto Teknoloji, I improved app stability from 91% to 99% and reduced app size by 30% through performance-driven solutions. Skilled in Flutter, SwiftUI, Firebase, Git, and Agile practices, I specialize in clean architecture, custom UI libraries, and efficient networking layers. I have built multiple e-commerce and enterprise apps from scratch and launched a SwiftUI Udemy course to share knowledge with developers worldwide. I thrive in collaborative environments and focus on building innovative, user-centered applications.',
           style: AppTextStyles.bodyLargeLight,
           textAlign: isMobile ? TextAlign.center : TextAlign.start,
-          maxLines: 4,
+          maxLines: 6,
           overflow: TextOverflow.ellipsis,
         ),
       ],

@@ -1,3 +1,4 @@
+import 'package:blog/app/constants/app_breakpoints.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
@@ -12,16 +13,13 @@ class ResponsiveLayout extends StatelessWidget {
   final Widget? tablet;
   final Widget? desktop;
 
-  static const int _tabletBreakpoint = 768;
-  static const int _desktopBreakpoint = 1200;
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth >= _desktopBreakpoint && desktop != null) {
+        if (constraints.maxWidth >= AppBreakpoints.desktop && desktop != null) {
           return desktop!;
-        } else if (constraints.maxWidth >= _tabletBreakpoint &&
+        } else if (constraints.maxWidth >= AppBreakpoints.tablet &&
             tablet != null) {
           return tablet!;
         } else {

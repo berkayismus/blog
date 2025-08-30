@@ -1,4 +1,4 @@
-import 'package:blog/features/presentation/views/personal_info_summary_page.dart';
+import 'package:blog/features/personal_info_summary/presentation/views/personal_info_summary_page.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
